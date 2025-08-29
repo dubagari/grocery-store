@@ -1,14 +1,12 @@
-import { useState } from "react";
-
+import React, { useState } from "react";
 import { products } from "../data/Data";
 import Headings from "../common/Headings";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaSearchengin } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import Model from "../common/Model";
-import PageHeading from "../common/PageHeading";
 
-const Shop = () => {
+const Flashsales = () => {
   const [isModelOpen, setIsModelOpen] = useState(false);
   const handleOpen = (productId) => {
     setIsModelOpen(productId);
@@ -18,7 +16,6 @@ const Shop = () => {
   };
   return (
     <div>
-      <PageHeading pagename={"shop"} home={"home"} />
       <div className="w-10/12 m-auto">
         <div>
           <Headings title={"hello"} />
@@ -68,4 +65,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Flashsales;

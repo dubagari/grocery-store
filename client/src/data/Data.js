@@ -28,25 +28,25 @@ export const navbar = [
 
 export const banners = [
   {
-    banner: "../images/miniture/slider-1.jpeg",
+    banner: "/assets/images/slider-1.jpeg",
   },
   {
-    banner: "../images/miniture/slider-2.jpeg",
+    banner: "/assets/images/slider-2.jpeg",
   },
   {
-    banner: "../images/miniture/slider-3.jpeg",
+    banner: "/assets/images/slider-3.jpeg",
   },
 ];
 
 export const category = [
   {
     id: 1,
-    img: "../images/miniture/living_room.jpg",
+    img: "/assets/images/living_room.jpg",
     name: "Living Room",
   },
   {
     id: 2,
-    img: "../images/miniture/bed_room.jpg",
+    img: "/assets/images/bed_room.jpg",
     name: "Bed Room",
   },
   {
@@ -54,12 +54,12 @@ export const category = [
     imgs: [
       {
         id: 31,
-        img: "../images/miniture/kids_room.jpg",
+        img: "/assets/images/kids_room.jpg",
         name: "Kids Room",
       },
       {
         id: 32,
-        img: "../images/miniture/kitchen.jpg",
+        img: "/assets/images/kitchen.jpg",
         name: "Kitchen",
       },
     ],
@@ -69,7 +69,7 @@ export const category = [
 export const products = [
   {
     id: 1,
-    img: "../images/miniture/chair/1.jpeg",
+    img: "/assets/images/chair/1.jpeg",
     category: "bestsell",
     brand: "Old Brand",
     title: "Natural Wood Dining Chair",
@@ -80,7 +80,7 @@ export const products = [
   },
   {
     id: 2,
-    img: "../images/miniture/chair/2.jpeg",
+    img: "/assets/images/chair/2.jpeg",
     category: "New Category",
     brand: "Latest Brand",
     title: "Dining Chair",
@@ -91,7 +91,7 @@ export const products = [
   },
   {
     id: 3,
-    img: "../images/miniture/chair/3.jpeg",
+    img: "/assets/images/chair/3.jpeg",
     category: "bestsell",
     brand: "Latest Brand",
     title: "Best Chair",
@@ -102,7 +102,7 @@ export const products = [
   },
   {
     id: 4,
-    img: "../images/miniture/chair/4.jpeg",
+    img: "/assets/images/chair/4.jpeg",
     category: "Old Category",
     brand: "Latest Brand",
     title: "Natural Wood Chair",
@@ -113,7 +113,7 @@ export const products = [
   },
   {
     id: 5,
-    img: "../images/miniture/chair/5.jpeg",
+    img: "/assets/images/chair/5.jpeg",
     category: "bestsell",
     brand: "Latest Brand",
     title: "Sitting Chair",
@@ -124,7 +124,7 @@ export const products = [
   },
   {
     id: 6,
-    img: "../images/miniture/chair/6.jpeg",
+    img: "/assets/images/chair/6.jpeg",
     category: "Low Price",
     brand: "Latest Brand",
     title: "Natural Wood Dining Chair",
@@ -136,7 +136,7 @@ export const products = [
 
   {
     id: 7,
-    img: "../images/miniture/chair/7.jpeg",
+    img: "/assets/images/chair/7.jpeg",
     category: "bestsell",
     brand: "Latest Brand",
     title: "Beautiful Chair",
@@ -147,7 +147,7 @@ export const products = [
   },
   {
     id: 8,
-    img: "../images/miniture/chair/8.jpeg",
+    img: "/assets/images/chair/8.jpeg",
     category: "Low Price",
     brand: "Indian",
     title: "Chair set",
@@ -158,7 +158,7 @@ export const products = [
   },
   {
     id: 9,
-    img: "../images/miniture/chair/9.jpeg",
+    img: "/assets/images/chair/9.jpeg",
     category: "Best One",
     brand: "Indian",
     title: "Best One",
@@ -169,7 +169,7 @@ export const products = [
   },
   {
     id: 10,
-    img: "../images/miniture/chair/10.jpeg",
+    img: "/assets/images/chair/10.jpeg",
     category: "High Price",
     brand: "Indian",
     title: "Chair",
@@ -180,7 +180,7 @@ export const products = [
   },
   {
     id: 11,
-    img: "../images/miniture/chair/11.jpeg",
+    img: "/assets/images/chair/11.jpeg",
     category: "bestsell",
     brand: "Indian",
     title: "Old Chair",
@@ -191,7 +191,7 @@ export const products = [
   },
   {
     id: 12,
-    img: "../images/miniture/chair/12.jpeg",
+    img: "/assets/images/chair/12.jpeg",
     category: "High Price",
     brand: "Indian",
     title: "New Chair",
@@ -202,7 +202,7 @@ export const products = [
   },
   {
     id: 13,
-    img: "../images/miniture/chair/13.jpeg",
+    img: "/assets/images/chair/13.jpeg",
     category: "bestsell",
     brand: "Indian",
     title: "New Brand Chair",
@@ -213,7 +213,7 @@ export const products = [
   },
   {
     id: 14,
-    img: "../images/miniture/chair/14.jpeg",
+    img: "/assets/images/chair/14.jpeg",
     category: "High Price",
     brand: "Indian",
     title: "Stylish Chair",
@@ -227,33 +227,33 @@ export const products = [
 export const arriveItems = [
   {
     id: 1,
-    img: "../images/miniture/chair/insta-1.jpg",
+    img: "/assets/images/chair/insta-1.jpg",
   },
   {
     id: 2,
-    img: "../images/miniture/chair/insta-2.jpg",
+    img: "/assets/images/chair/insta-2.jpg",
   },
   {
     id: 3,
-    img: "../images/miniture/chair/insta-3.jpg",
+    img: "/assets/images/chair/insta-3.jpg",
   },
   {
     id: 4,
-    img: "../images/miniture/chair/insta-4.jpg",
+    img: "/assets/images/chair/insta-4.jpg",
   },
   {
     id: 5,
-    img: "../images/miniture/chair/insta-5.jpg",
+    img: "/assets/images/chair/insta-5.jpg",
   },
   {
     id: 6,
-    img: "../images/miniture/chair/insta-6.jpg",
+    img: "/assets/images/chair/insta-6.jpg",
   },
 ];
 
 export const offer = [
   {
-    customer_img: "../images/miniture/creation.jpg",
+    customer_img: "/assets/images/creation.jpg",
     title: "CRAFT OWN FURNITURE",
     subtitle: "Your new forever favorites are here",
   },
@@ -262,37 +262,37 @@ export const offer = [
 export const brands = [
   {
     id: 1,
-    img: "../images/miniture/chair/1.jpeg",
+    img: "/assets/images/chair/1.jpeg",
     title: "Coty",
     short_description: "Grab a deal Airspun Products",
   },
   {
     id: 2,
-    img: "../images/miniture/chair/2.jpg",
+    img: "/assets/images/chair/2.jpg",
     title: "Laten",
     short_description: "Grab a deal Airspun Products",
   },
   {
     id: 3,
-    img: "../images/miniture/chair/3.png",
+    img: "/assets/images/chair/3.png",
     title: "Imagic",
     short_description: "Grab a deal Airspun Products",
   },
   {
     id: 4,
-    img: "../images/miniture/chair/4.png",
+    img: "/assets/images/chair/4.png",
     title: "Pee Safe",
     short_description: "Grab a deal Airspun Products",
   },
   {
     id: 5,
-    img: "../images/miniture/chair/5.jpg",
+    img: "/assets/images/chair/5.jpg",
     title: "Maybeleine",
     short_description: "Grab a deal Airspun Products",
   },
   {
     id: 6,
-    img: "../images/miniture/chair/6.png",
+    img: "/assets/images/chair/6.png",
     title: "The Purest",
     short_description: "Grab a deal Airspun Products",
   },
@@ -303,7 +303,7 @@ export const footer = [
     id: 1,
     header: "Our Store",
     content1:
-      "Miniture is one of the biggest international fashion companies, one of the world’s largest distribution groups.",
+      "grocery is one of the biggest international fashion companies, one of the world’s largest distribution groups.",
   },
   {
     id: 2,

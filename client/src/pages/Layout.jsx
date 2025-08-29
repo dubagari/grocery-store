@@ -6,6 +6,7 @@ import Blog from "./Blog";
 import About from "./About";
 import Contact from "./Contact";
 import PageNotFund from "./PageNotFund";
+import Cart from "./Cart";
 
 const Layout = () => {
   return (
@@ -14,6 +15,7 @@ const Layout = () => {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/*" element={<PageNotFund />} />
