@@ -62,7 +62,7 @@ const Header = () => {
               </span>
               <CiHeart />
             </Link> */}
-            <Link to={"/register"} className="text-2xl">
+            <Link to={"/login"} className="text-2xl">
               <CiUser />
             </Link>
             <Link className="text-2xl relative " onClick={sidebarhandle}>

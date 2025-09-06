@@ -7,7 +7,8 @@ import About from "./About";
 import Contact from "./Contact";
 import PageNotFund from "./PageNotFund";
 import Cart from "./Cart";
-import Register from "./Register";
+import Signup from "./Signup";
+import Login from "./Login";
 
 const Layout = () => {
   return (
@@ -19,7 +20,8 @@ const Layout = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<Signup />} />
         <Route path="/*" element={<PageNotFund />} />
       </Routes>
     </>
