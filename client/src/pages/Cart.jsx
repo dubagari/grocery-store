@@ -32,7 +32,11 @@ const Cart = () => {
       <PageHeading pagename={"cart"} home={"home"} />
       <div className="mt-5">
         {cartItems.length === 0 ? (
-          <p className="text-gray-600">Cart is empty.</p>
+          <div className="w-10/12 m-auto my-7 text-center">
+            <p className="text-gray-600 text-3xl capitalize font-bold">
+              you have no cart in here.
+            </p>
+          </div>
         ) : (
           <div>
             <div>

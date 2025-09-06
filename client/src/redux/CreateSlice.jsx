@@ -14,6 +14,7 @@ const cartSlice = createSlice({
     data: [],
     totalItems: 0,
     totalAmount: 0,
+    totalLikes: 0,
   },
 
   reducers: {
@@ -78,10 +79,25 @@ const cartSlice = createSlice({
       state.totalItems = totalItems;
       state.totalAmount = totalAmount;
     },
+    addLike: (state) => {
+      state.totalLikes += 1;
+    },
+    removeLike: (state) => {
+      if (state.totalLikes > 0) state.totalLikes -= 1;
+    },
+    resetLikes: (state) => {
+      state.totalLikes = 0;
+    },
   },
 });
 
-export const { addItemToCart, updateQuantity, removeItems, getCartTotal } =
-  cartSlice.actions;
+export const {
+  addItemToCart,
+  updateQuantity,
+  removeItems,
+  getCartTotal,
+  addLike,
+  removeLike,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

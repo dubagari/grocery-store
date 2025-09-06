@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 
 import { CiHeart, CiShoppingCart, CiUser } from "react-icons/ci";
 import Sidebar from "../common/Sidebar";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [sticky, setSticky] = useState(false);
@@ -22,6 +23,9 @@ const Header = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const { totalItems } = useSelector((state) => state.cart);
+  const { totalLikes } = useSelector((state) => state.cart.totalLikes);
   return (
     <div>
       <div
@@ -52,15 +56,18 @@ const Header = () => {
             ))}
           </div>
           <div className="flex gap-2 font-semibold">
-            <Link className="text-2xl">
+            {/* <Link className="text-2xl relative">
+              <span className="absolute -top-2 -right-2 text-sm bg-red-500 rounded-full w-5 h-5 flex justify-center items-center text-white">
+                {totalLikes}
+              </span>
               <CiHeart />
-            </Link>
-            <Link className="text-2xl">
+            </Link> */}
+            <Link to={"/register"} className="text-2xl">
               <CiUser />
             </Link>
             <Link className="text-2xl relative " onClick={sidebarhandle}>
               <span className="absolute -top-2 -right-2 text-sm bg-red-500 rounded-full w-5 h-5 flex justify-center items-center text-white">
-                0
+                {totalItems}
               </span>
               <CiShoppingCart />
             </Link>

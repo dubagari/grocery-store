@@ -7,6 +7,7 @@ import About from "./About";
 import Contact from "./Contact";
 import PageNotFund from "./PageNotFund";
 import Cart from "./Cart";
+import Register from "./Register";
 
 const Layout = () => {
   return (
@@ -18,6 +19,7 @@ const Layout = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/*" element={<PageNotFund />} />
       </Routes>
     </>

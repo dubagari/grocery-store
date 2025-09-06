@@ -4,7 +4,7 @@ import { category } from "../data/Data";
 const Category = () => {
   return (
     <>
-      <div className="w-10/12 mx-auto ">
+      <div className="w-10/12 mx-auto  ">
         <div>
           <div className=" mb-3 lg:flex">
             {category.map((cat, index) => (
