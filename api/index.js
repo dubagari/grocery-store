@@ -15,6 +15,17 @@ mongoose
 
 app.use("/api/auth", userroute);
 
+app.use((err, req, res, next) => {
+  const statuscode = err.statuscode || 500;
+  const message = err.message || "Enternal server error";
+
+  return res.status(statuscode).json({
+    success: false,
+    statuscode,
+    message,
+  });
+});
+
 app.listen(3000, () => {
   console.log("🚀 Server is running on port 3000");
 });
