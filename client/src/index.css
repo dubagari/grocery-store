@@ -5,3 +5,7 @@
 :root {
   --yellow-color: #facc15;
 }
+
+html {
+  background-color: rgba(252, 248, 248, 0.267);
+}
