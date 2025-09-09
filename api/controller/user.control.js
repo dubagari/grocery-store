@@ -31,7 +31,7 @@ export const login = async (req, res, next) => {
     if (!validpassword) return next(errorHandler(402, "wrong credential"));
 
     const token = jwt.sign({ id: validuser._id }, process.env.secret_jwt);
-    const { password: hashed, ...rest } = validuser._doc;
+    const { password: hashedPassword, ...rest } = validuser._doc;
 
     res
       .cookie("access_token", token, { httpOnly: true })
