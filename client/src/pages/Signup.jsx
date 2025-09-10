@@ -1,16 +1,21 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  signinStart,
+  signinSuccess,
+  signinFailure,
+} from "../redux/Store/userSlice";
 const Signup = () => {
   const [formData, setFormData] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const { loading, error } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      setLoading(true);
-      setError(false);
+      dispatch(signinStart());
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -18,14 +23,14 @@ const Signup = () => {
       });
 
       const data = await res.json();
-      setLoading(false);
+      dispatch(signinSuccess(data));
       if (data.success === false) {
-        setError(true);
+        dispatch(signinFailure(data.message));
         return;
       }
+      navigate("/login");
     } catch (error) {
-      setLoading(false);
-      setError(true);
+      dispatch(signinFailure(error.message));
     }
   };
 
@@ -81,7 +86,10 @@ const Signup = () => {
             </button>
           </form>
           <div className=" flex gap-3 p-3">
-            <p> i have account:</p> <Link to={"/login"}>signin</Link>
+            <p> have an account:</p>{" "}
+            <Link to={"/login"} className="text-green-500 underline">
+              Login
+            </Link>
           </div>
           <p className="text-red-600 p-3">{error && "something is wrong"}</p>
         </div>
