@@ -11,7 +11,6 @@ import {
 const Login = () => {
   const [formData, setFormData] = useState({});
   const { loading, error } = useSelector((state) => state.user);
-  console.log(loading, error);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -28,11 +27,11 @@ const Login = () => {
       });
 
       const data = await res.json();
-      dispatch(signinSuccess(data));
       if (data.success === false) {
         dispatch(signinFailure(data.message));
         return;
       }
+      dispatch(signinSuccess(data));
       navigate("/");
     } catch (error) {
       dispatch(signinFailure(error.message));

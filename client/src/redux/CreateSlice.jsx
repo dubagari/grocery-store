@@ -1,13 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const saveCartToStorage = (cartState) => {
-  try {
-    localStorage.setItem("cart", JSON.stringify(cartState));
-  } catch (e) {
-    console.error("Failed to save cart to localStorage", e);
-  }
-};
-
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
