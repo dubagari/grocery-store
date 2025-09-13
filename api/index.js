@@ -1,12 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cookiePerser from "cookie-parser";
 import userroute from "./router/auth.route.js";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cookiePerser());
 
 mongoose
   .connect(process.env.MONGODB)

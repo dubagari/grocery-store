@@ -26,10 +26,8 @@ const cartSlice = createSlice({
           }
         });
         state.data = tempCart;
-        saveCartToStorage(state.data);
       } else {
         state.data.push(action.payload);
-        saveCartToStorage(state.data);
       }
     },
 
@@ -44,7 +42,6 @@ const cartSlice = createSlice({
         updateProduct.totalPrice = updateProduct.price * updateProduct.quantity;
 
         state.data[productIndex] = updateProduct;
-        saveCartToStorage(state.data);
       }
     },
 
@@ -54,7 +51,6 @@ const cartSlice = createSlice({
       );
 
       state.data = cartTemp;
-      saveCartToStorage(state.data);
     },
 
     getCartTotal(state) {

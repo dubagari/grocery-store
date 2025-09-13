@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
 import { navbar } from "../data/Data";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import { CiHeart, CiShoppingCart, CiUser } from "react-icons/ci";
 import Sidebar from "../common/Sidebar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  logoutFailure,
+  logoutStart,
+  logoutSuccess,
+} from "../redux/Store/userSlice";
 
 const Header = () => {
   const [sticky, setSticky] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const sidebarhandle = () => {
     setSidebarOpen(!sidebarOpen);
@@ -25,7 +32,24 @@ const Header = () => {
   }, []);
 
   const { totalItems } = useSelector((state) => state.cart);
-  const { totalLikes } = useSelector((state) => state.cart.totalLikes);
+
+  const handlelogout = async () => {
+    try {
+      dispatch(logoutStart());
+      const res = await fetch("/api/auth/logout");
+      const data = await res.json();
+
+      if (data.success === false) {
+        dispatch(logoutFailure(data).message);
+        return;
+      }
+
+      dispatch(logoutSuccess(data));
+      navigate("/login");
+    } catch (error) {
+      dispatch(logoutFailure(data).message);
+    }
+  };
   return (
     <div>
       <div
@@ -55,7 +79,7 @@ const Header = () => {
               </div>
             ))}
           </div>
-          <div className="flex gap-2 font-semibold">
+          <div className="flex ite gap-2 font-semibold">
             {/* <Link className="text-2xl relative">
               <span className="absolute -top-2 -right-2 text-sm bg-red-500 rounded-full w-5 h-5 flex justify-center items-center text-white">
                 {totalLikes}
@@ -71,6 +95,13 @@ const Header = () => {
               </span>
               <CiShoppingCart />
             </Link>
+            <button
+              type="button"
+              onClick={handlelogout}
+              className="ml-3 text-2xl"
+            >
+              logout
+            </button>
           </div>
         </div>
       </div>

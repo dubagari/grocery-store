@@ -41,3 +41,19 @@ export const login = async (req, res, next) => {
     next(error);
   }
 };
+
+export const Logout = (req, res, next) => {
+  try {
+    res
+      .clearCookie("access_token", {
+        httpOnly: true,
+        secure: process.env.secret_jwt === "production",
+      })
+      .status(200)
+      .json({
+        message: "logout successully",
+      });
+  } catch (error) {
+    next(error);
+  }
+};

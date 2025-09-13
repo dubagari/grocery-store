@@ -3,7 +3,7 @@ import { FiMinus } from "react-icons/fi";
 import { FaPlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addItemToCart,
   getCartTotal,
@@ -15,7 +15,10 @@ const Model = ({ isModelOpen, handleClose, data }) => {
   const dispatch = useDispatch();
   const [ItemToCart, setItemToCart] = useState(false);
 
+  const currentuser = useSelector((state) => state.user.currentUser);
+
   const handleAddItemToCart = (product) => {
+    if (!currentuser) return;
     const totalPrice = qty * product.price;
 
     const tempProduct = {
@@ -89,7 +92,8 @@ const Model = ({ isModelOpen, handleClose, data }) => {
                       <p className="text-lg text-green-600">in storck 400 </p>
                       <div className=" flex items-center gap-3">
                         <button
-                          className="border mt-3 px-5 py-3 hover:bg-red-400 text-red-600 hover:text-white"
+                          disabled={!currentuser}
+                          className="border mt-3 px-5 py-3 hover:bg-red-400 text-red-600 hover:text-white disabled:bg-red-300"
                           onClick={() => decreaseItem(data.id, qty)}
                         >
                           <FiMinus />
@@ -98,7 +102,8 @@ const Model = ({ isModelOpen, handleClose, data }) => {
                           {qty}
                         </span>
                         <button
-                          className="border gap-3 mt-3 px-5 py-3 hover:bg-red-400 text-red-600 hover:text-white"
+                          disabled={!currentuser}
+                          className=" border gap-3 mt-3 px-5 py-3 hover:bg-red-400 text-red-600 hover:text-white disabled:bg-red-300"
                           onClick={() => increaseItem(data.id, qty)}
                         >
                           <FaPlus />
@@ -109,10 +114,13 @@ const Model = ({ isModelOpen, handleClose, data }) => {
                           </button>
                         ) : (
                           <button
+                            disabled={!currentuser}
                             onClick={() => handleAddItemToCart(data)}
-                            className="border gap-3 mt-3 px-5 py-2 text-md font-semibold uppercase text-white bg-red-600 hover:bg-red-400"
+                            className="border gap-3 mt-3 px-5 py-2 text-md font-semibold uppercase text-white bg-red-600 hover:bg-red-400 disabled:bg-red-300"
                           >
-                            add to cart
+                            {currentuser
+                              ? " add to cart"
+                              : "login to countinue "}
                           </button>
                         )}
                       </div>

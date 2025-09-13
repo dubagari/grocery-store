@@ -9,6 +9,7 @@ import PageNotFund from "./PageNotFund";
 import Cart from "./Cart";
 import Signup from "./Signup";
 import Login from "./Login";
+import PriviteRoute from "../component/PriviteRoute";
 
 const Layout = () => {
   return (
@@ -17,7 +18,9 @@ const Layout = () => {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route element={<PriviteRoute />}>
+          <Route path="/cart" element={<Cart />} />
+        </Route>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
