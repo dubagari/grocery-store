@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookiePerser from "cookie-parser";
 import userroute from "./router/auth.route.js";
+import productDetails from "./router/product.route.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ mongoose
   .catch((err) => console.error("Connection error:", err));
 
 app.use("/api/auth", userroute);
+app.use("/api/admin", productDetails);
 
 app.use((err, req, res, next) => {
   const statuscode = err.statuscode || 500;
